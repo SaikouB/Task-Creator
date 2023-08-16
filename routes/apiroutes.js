@@ -42,16 +42,23 @@ api.post('/api/notes', (req, res) => {
         }
     })
 });
-api.delete('/api/notes/:id',(req, res) => {
+api.delete('/api/notes/:id', (req, res) => {
     fs.readFile(path.join(__dirname, '../db/notes.json'), 'UTF-8', (error, data) => {
         if (error) {
             res.json(error)
         } else {
             const notes = JSON.parse(data);
-            const { title, text } = req.body;
-            console.log(req.params.id)
+            const notesDeleted = notes.filter(note => note.note_id !== req.params.id);
+
+            fs.writeFile(path.join(__dirname, '../db/notes.json'), JSON.stringify(notesDeleted), (error) => {
+                if (error) {
+                    res.status(400).send('Error removing note');
+                } else {
+                    res.json(notesDeleted);
+                }
+            });
         }
-    })         
+    })
 })
 
 module.exports = api;
