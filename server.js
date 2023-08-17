@@ -15,5 +15,5 @@ app.use(htmlRoutes);
 
 // Listens for port activity
 app.listen(PORT, () =>
-    console.log(`I'm listening 👂 @ http://localhost:${PORT}`)
+    console.log(`👂 @ http://localhost:${PORT}`)
 );

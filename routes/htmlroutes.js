@@ -1,15 +1,15 @@
-// HTML route
+// html router and path
 const html = require('express').Router();
 const path = require('path');
 
-console.log(__dirname)
-// Getting route for notes.html
+// Notes route
 html.get('/notes', (req, res) =>
 res.sendFile(path.join(__dirname, '../public/notes.html'))
 );
 
-// Getting route for homepage
+// Homepage route
 html.get('/', (req, res) =>
 res.sendFile(path.join(__dirname, '../public/index.html'))
 );
+
 module.exports = html;
