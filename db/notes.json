@@ -1,1 +1,17 @@
-[]
+[
+    {
+        "title": "Grocery List",
+        "text": "apples, banannas, oranges, veggies",
+        "note_id": "77b4"
+    },
+    {
+        "title": "Class at 6:30pm",
+        "text": "Day three of MySQL",
+        "note_id": "1144"
+    },
+    {
+        "title": "Module 11 assignment",
+        "text": "Deploy Module 11 assignment via Heroku",
+        "note_id": "2d9d"
+    }
+]
